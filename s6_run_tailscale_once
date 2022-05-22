@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -m
+
+# Only run this script once
+s6-svc -O /var/run/s6/services/tailscale
+
+echo "Starting tailscaled"
+/app/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock &
+
+echo -n "Sleeping for 5 seconds for tailscaled to finish ... "
+sleep 5
+echo "done"
+
+echo "Starting tailscale"
+/app/tailscale up --authkey=${TAILSCALE_AUTHKEY} --hostname=flyio-pihole &
+
+fg 1
