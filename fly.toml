@@ -1,0 +1,29 @@
+app = "long-fire-271"
+
+
+[[services]]
+  internal_port = 80
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = []
+    port = "80"
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = "443"
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000
+
+[[services]]
+  internal_port = 53
+  protocol = "udp"
+
+  [[services.ports]]
+    port = "53"
