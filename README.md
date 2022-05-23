@@ -6,12 +6,13 @@ How to do it:
   1. [Get set up with Fly.io](https://fly.io/docs/speedrun/) (only install `flyctl` and create an account/login)
   1. [Get set up with Tailscale](https://tailscale.com/kb/1017/install/)
   1. Clone this repo
-  1. Run the command `fly launch --name $APPNAME --no-deploy` and answer the prompts (pick your own $APPNAME)
+  1. Run the command `fly launch --name $APP_NAME --no-deploy` and answer the prompts (pick your own $APP_NAME)
   1. [Create an auth key in Tailscale](https://tailscale.com/kb/1085/auth-keys/) and copy it to clipboard
-  1. Run the command `fly secrets set TAILSCALE_AUTHKEY=<key goes here>`
+  1. Run the command `fly secrets set TAILSCALE_AUTHKEY=<paste auth key here>`
   1. Run the command `fly deploy --remote-only`
   1. Test it out with `dig @${APP_NAME}.fly.dev google.com`
-  1. If $STEP-1 worked, get the IP address of the app with `fly ips list | grep v4 | awk '{print $2}'` and set that as your DNS resolver (in `/etc/resolv.conf`, Advanced tab of macOS's Networking panel in System Preferences, etc.)
+  1. If $STEP-1 worked, get the IP address of the Tailscale interface (from the [Tailscale admin](https://login.tailscale.com/admin/machines)) and set that as your DNS resolver (in `/etc/resolv.conf`, Advanced tab of macOS's Networking panel in System Preferences, iOS, etc.)
+  
 
 Reading/Reference:
 
