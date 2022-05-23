@@ -13,6 +13,6 @@ sleep 5
 echo "done"
 
 echo "Starting tailscale"
-/app/tailscale up --authkey=${TAILSCALE_AUTHKEY} --hostname=flyio-pihole &
+/app/tailscale up --authkey=${TAILSCALE_AUTHKEY} --hostname=fli-hole &
 
 fg 1
