@@ -18,7 +18,7 @@ COPY ./s6_run_tailscale_once /etc/services.d/tailscale/run
 
 COPY ./workaround-start.sh /start.sh
 
-ENV INTERFACE eth0
+ENV INTERFACE tailscale0
 ENV DNSMASQ_LISTENING ALL
 ENV TZ America/Chicago
 ENV VIRTUAL_HOST pi.hole
