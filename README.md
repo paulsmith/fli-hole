@@ -12,7 +12,7 @@ How to do it:
   1. Run the command `fly secrets set WEBPASSWORD=<admin interface password here>`
   1. Run the command `fly deploy --remote-only`
   1. Test it out with `dig @${APP_NAME}.fly.dev google.com`
-  1. If $STEP-1 worked, navigate to the [Tailscale admin interface](https://login.tailscale.com/admin/machines)), grab the IP of your instance, then navigate to the "DNS" tab and add the IP as a 
+  1. If $STEP-1 worked, navigate to the [Tailscale admin interface](https://login.tailscale.com/admin/machines), grab the IP of your instance, then navigate to the "DNS" tab and add the IP as a 
 nameserver. Make sure to activate "Override local DNS" in order to be able to use it on iOS and not have to configure the nameservers manually on every device.
   
 Reading/Reference:
