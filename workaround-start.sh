@@ -66,8 +66,6 @@ echo " ::: Starting docker specific checks & setup for docker pihole/pihole"
 #fi
 
 #fix_capabilities
-load_web_password_secret
-generate_password
 validate_env || exit 1
 prepare_configs
 
